@@ -75,7 +75,7 @@ Shader "Custom/AlltogehterShader"
                 float3 specularReflection = atten * _SpecColor.rgb * shininessPower;
                 float3 lightFinal = diffuseReflection + specularReflection + unity_IndirectSpecColor;
 
-                return float4(lightFinal, 1.0);
+                return float4(lightFinal * _Color.rgb, 1.0);
 			}
 
 			ENDCG

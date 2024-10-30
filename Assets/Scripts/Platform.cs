@@ -26,7 +26,7 @@ public class Platform : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position, goToPos, time);
         time += Time.deltaTime * lerpSpeed;
-        Debug.Log(time);
+
 
         if (transform.position == goToPos && lerped)
         {
