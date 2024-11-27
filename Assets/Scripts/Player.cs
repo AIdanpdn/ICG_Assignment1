@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
 
     [SerializeField] private Animator animController;
-    [SerializeField] private AnimationClip idle;
-    [SerializeField] private AnimationClip Walk;
+    [SerializeField] private ParticleSystem particles;
 
     public Rigidbody rb;
     public Transform cam;
@@ -41,8 +39,8 @@ public class Player : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward.normalized;
             rb.velocity = new Vector3(moveDir.x * speed, rb.velocity.y, moveDir.z * speed);
             animController.Play("Walk");
-            //rb.AddForce(moveDir * speed, ForceMode.Force);
-
+            particles.gameObject.SetActive(true);
+            particles.Emit(1);
         }
         else
         {

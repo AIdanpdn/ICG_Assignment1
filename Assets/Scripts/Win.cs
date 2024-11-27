@@ -8,6 +8,9 @@ public class Win : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Instantiate(trophy);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Instantiate(trophy);
+        }
     }
 }

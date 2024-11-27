@@ -8,6 +8,9 @@ public class Lose : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        collision.transform.position = spawn.transform.position;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.transform.position = spawn.transform.position;
+        }
     }
 }

@@ -1,7 +1,7 @@
 Shader "Custom/ColourGrading"
 {
     Properties
-    { _MainTex ("Texture", 2D) = "white" {}
+    {   _MainTex ("Texture", 2D) = "white" {}
         _LUT("LUT", 2D) = "white" {}
         _Contribution("Contribution", Range(0, 1)) = 1
     }
